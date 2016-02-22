@@ -8,7 +8,8 @@ public class CalculatorTest {
 
 	@Test
 	public void Calculator() {
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		assertNotNull(calc);
 	}
 	@Test
 	public void getTotal() {

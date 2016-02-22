@@ -25,7 +25,7 @@ public class Calculator {
 	 * getTotal() will allow for the calling of the private value total to be called outside of this scope
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -33,6 +33,8 @@ public class Calculator {
 	 * @param value
 	 */
 	public void add (int value) {
+		int temp = total;
+		total = temp + value;
 	}
 	
 	/**
@@ -40,6 +42,8 @@ public class Calculator {
 	 * @param value
 	 */
 	public void subtract (int value) {
+		int temp = total;
+		total = temp - value;
 	}
 	
 	/**
@@ -47,13 +51,22 @@ public class Calculator {
 	 * @param value
 	 */
 	public void multiply (int value) {
+		int temp = total;
+		total = temp * value;
 	}
 	
 	/**
-	 * divide() divides the value into total
+	 * divide() divides the total by the value
 	 * @param value
 	 */
 	public void divide (int value) {
+		if(value != 0){
+			int temp = total;
+			total = temp/value;
+		}
+		else{
+			total = 0;
+		}
 	}
 	
 	/**
