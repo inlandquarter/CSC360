@@ -1,5 +1,9 @@
 package cse360assign3;
-
+/** CalculatorTest will run JUnit testing for all functions in Calculator
+ * 
+ * @author Fabian Hinojosa PIN: 407
+ * @version Feb 21, 2016.
+ */
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -43,7 +47,7 @@ public class CalculatorTest {
 		calc.divide(2);
 		assertEquals(5, calc.getTotal());
 		
-		calc.divide(0);
+		calc.divide(0); //this will check for if the function can handle dividing by 0.
 		assertEquals(0, calc.getTotal());
 	}
 	@Test
