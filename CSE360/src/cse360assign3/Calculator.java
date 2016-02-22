@@ -12,13 +12,19 @@ public class Calculator {
 	 * total will be the value returned for every call from a function
 	 */
 	private int total;
+	/**
+	 * record will hold the record of all the functions as they run. Each function will concatenate 
+	 * a record of what it is doing to hold a history of what is done to an object
+	 */
+	private String record;
 	
 	/**
-	 * Calculator() is a constructor that generates and object of type calculator with the int total 
+	 * Calculator() is a constructor that generates and object of type calculator with the integer total 
 	 * variable initialized as 0
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		record = "0";
 	}
 
 	/**
@@ -35,6 +41,7 @@ public class Calculator {
 	public void add (int value) {
 		int temp = total;
 		total = temp + value;
+		record = record + " + " + value;
 	}
 	
 	/**
@@ -44,6 +51,7 @@ public class Calculator {
 	public void subtract (int value) {
 		int temp = total;
 		total = temp - value;
+		record = record + " - " + value;	
 	}
 	
 	/**
@@ -53,6 +61,7 @@ public class Calculator {
 	public void multiply (int value) {
 		int temp = total;
 		total = temp * value;
+		record = record + " * " + value;
 	}
 	
 	/**
@@ -60,12 +69,15 @@ public class Calculator {
 	 * @param value
 	 */
 	public void divide (int value) {
+		//if value is 0, make total = to 0
 		if(value != 0){
 			int temp = total;
 			total = temp/value;
+			record = record + " / " + value;
 		}
 		else{
 			total = 0;
+			record = record + " / 0";
 		}
 	}
 	
@@ -74,7 +86,8 @@ public class Calculator {
 	 * @return
 	 */
 	public String getHistory () {
-		return "";
+		//returns the string that had the functions concatenated
+		return record;
 	}
 
 }

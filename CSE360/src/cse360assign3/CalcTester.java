@@ -9,7 +9,18 @@ public class CalcTester {
 		clc.multiply(10);
 		clc.subtract(1);
 		clc.divide(7);
-		System.out.println(clc.getTotal());
+		clc.divide(0);
+		clc.add(30);
+		System.out.println(clc.getHistory());
+		
+		
+		Calculator myCalculator = new Calculator();
+		myCalculator.add (4);
+		myCalculator.subtract (2);
+		myCalculator.multiply (2);
+		myCalculator.add(5);
+
+		System.out.println(myCalculator.getHistory());
 	}
 	
 }
